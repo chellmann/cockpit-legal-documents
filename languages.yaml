@@ -1,0 +1,20 @@
+en:
+  PLUGIN_COCKPIT_LEGAL_DOCUMENTS:
+    SERVER_URL: 'Server-URL ending with legaldocumentshare'
+    CACHE_ENABLE: Cache enabled
+    CACHE_DURATION_DAYS: Number of Days before refetch the Documents from the Sever
+    DOCS_FIELDSET: Legal Documents
+    DOCS:
+      KEY: Key
+      IMPRINT: Imprint
+      PRIVACY: Privacy statement
+de:
+  PLUGIN_COCKPIT_LEGAL_DOCUMENTS:
+    SERVER_URL: 'Server-URL, endet mit legaldocumentshare'
+    CACHE_ENABLE: Cache aktiviert
+    CACHE_DURATION_DAYS: Anzahl an Tagen bevor der Inhalt neu vom Server geladen wird
+    DOCS_FIELDSET: Rechtstexte
+    DOCS:
+      KEY: Key
+      IMPRINT: Impressum
+      PRIVACY: Datenschutzerklärung

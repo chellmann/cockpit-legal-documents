@@ -1,0 +1,24 @@
+{
+  "name": "chellmann/cockpit-legal-documents",
+  "type": "grav-plugin",
+  "description": "Download and cache legal documents from cockpit.legal",
+  "keywords": ["plugin"],
+  "homepage": "https://github.com/chellmann/grav-plugin-cockpit-legal-documents",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Conrad Hellmann",
+      "email": "post@wachwerk.de",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Grav\\Plugin\\CockpitLegalDocuments\\": "classes/"
+    },
+    "classmap":  ["cockpit-legal-documents.php"]
+  }
+}

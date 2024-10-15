@@ -1,0 +1,84 @@
+name: Cockpit Legal Documents
+slug: cockpit-legal-documents
+type: plugin
+version: 0.1.0
+description: Download and cache legal documents from cockpit.legal
+icon: plug
+author:
+  name: Conrad Hellmann
+  email: post@wachwerk.de
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.6.0' }
+
+form:
+  validation: loose
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    settings.serverUrl:
+      type: text
+      label: PLUGIN_COCKPIT_LEGAL_DOCUMENTS.SERVER_URL
+      default: https://app.cockpit.legal/api/cockpit/resources/legaldocumentshare
+      validate:
+        requiered: true
+    settings.enableCache:
+      type: toggle
+      label: PLUGIN_COCKPIT_LEGAL_DOCUMENTS.CACHE_ENABLE
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    settings.cacheDuration:
+      type: text
+      label: PLUGIN_COCKPIT_LEGAL_DOCUMENTS.CACHE_DURATION_DAYS
+      default: 7
+      validate:
+        requiered: true
+        type: int
+        min: 0
+        max: 60
+        
+    docs.fieldset:
+      type: fieldset
+      title: PLUGIN_COCKPIT_LEGAL_DOCUMENTS.DOCS_FIELDSET
+      icon: calendar
+      collapsed: false
+      collapsible: false
+      fields:
+
+        imprint.section:
+          type: section
+          title: PLUGIN_COCKPIT_LEGAL_DOCUMENTS.DOCS.IMPRINT
+          underline: true
+          fields:
+            imprint.key:
+              type: text
+              label: PLUGIN_COCKPIT_LEGAL_DOCUMENTS.DOCS.KEY
+              validate:
+                requiered: false
+                pattern: '^[a-z0-9]{32}$'
+
+        privacy.section:
+          type: section
+          title: PLUGIN_COCKPIT_LEGAL_DOCUMENTS.DOCS.PRIVACY
+          underline: true
+          fields:
+            privacy.key:
+              type: text
+              label: PLUGIN_COCKPIT_LEGAL_DOCUMENTS.DOCS.KEY
+              validate:
+                requiered: false
+                pattern: '^[a-z0-9]{32}$'
